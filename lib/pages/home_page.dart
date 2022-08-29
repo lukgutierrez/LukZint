@@ -29,7 +29,12 @@ class HomePage extends StatelessWidget {
             Column(
               children: [
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PageTwo()),
+                      );
+                    },
                     child: Container(
                       child: Text("Navegadores"),
                     )),
@@ -38,7 +43,12 @@ class HomePage extends StatelessWidget {
             Column(
               children: [
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PageThree()),
+                      );
+                    },
                     child: Container(
                       child: Text("Navegadores"),
                     )),
@@ -53,7 +63,8 @@ class PageOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WebView(
-      initialUrl: "https://fast.com/es/",
+      initialUrl: "https://www.argentina.gob.ar/pais/codigo-telefonia",
+      javascriptMode: JavascriptMode.unrestricted,
     );
   }
 }
@@ -63,15 +74,27 @@ class PageTwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return WebView(
+      initialUrl:
+          "https://es.wikipedia.org/wiki/Anexo:Prefijos_telef%C3%B3nicos_mundiales",
+      javascriptMode: JavascriptMode.unrestricted,
+    );
   }
 }
 
-class PageThree extends StatelessWidget {
-  const PageThree({Key? key}) : super(key: key);
+class PageThree extends StatefulWidget {
+  const PageThree();
 
   @override
+  State<PageThree> createState() => _PageThreeState();
+}
+
+class _PageThreeState extends State<PageThree> {
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    return WebView(
+      initialUrl: "https://www.informesenlinea.com/detectar-empresa-telefono",
+      javascriptMode: JavascriptMode.disabled,
+    );
   }
 }
