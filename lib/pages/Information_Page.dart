@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:people_information/models/phone_number.dart';
 
 class PageInformation extends StatelessWidget {
   const PageInformation({Key? key}) : super(key: key);
@@ -14,10 +15,18 @@ class PageInformation extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    width: 100,
-                    height: 100,
-                    child: Image(image: AssetImage("assets/image/phone.png")),
+                  GestureDetector(
+                    child: Container(
+                      width: 100,
+                      height: 100,
+                      child: Image(image: AssetImage("assets/image/phone.png")),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PhoneNumbers()),
+                      );
+                    },
                   ),
                   Container(
                       width: 100,
