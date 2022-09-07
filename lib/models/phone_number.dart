@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:people_information/pages/test_page.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class PhoneNumbers extends StatelessWidget {

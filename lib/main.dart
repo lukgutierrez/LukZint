@@ -9,7 +9,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Material App',
+        title: 'LukZint',
+        theme: ThemeData(
+          primaryColor: Color(0xFFF20D625),
+        ),
         home: PageInformation());
   }
 }
