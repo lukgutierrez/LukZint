@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:people_information/pages/test_page.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class PhoneNumbers extends StatelessWidget {
-  const PhoneNumbers({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,99 +12,46 @@ class PhoneNumbers extends StatelessWidget {
             Image(image: AssetImage("assets/image/fondoimage.png")),
             Center(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image(image: AssetImage("assets/image/logo.png"))),
-                  Text(
-                    "PHONE NUMBERS",
-                    style: TextStyle(fontSize: 15, color: Color(0xFFF20D625)),
+                  Column(
+                    children: [
+                      SizedBox(
+                          width: 100,
+                          height: 100,
+                          child: Image(
+                              image: AssetImage("assets/image/logo.png"))),
+                      Text(
+                        "PHONE NUMBERS",
+                        style:
+                            TextStyle(fontSize: 15, color: Color(0xFFF20D625)),
+                      ),
+                    ],
                   ),
-                  ElevatedButton(
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Color(0xFFF20D625)),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                          ))),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => PhoneOne()),
-                        );
-                      },
-                      child: Container(
-                        child: Text(
-                          "CODIGO DE AREA INTERNACIONAL",
-                          style: TextStyle(color: Colors.black),
-                        ),
-                      )),
-                  ElevatedButton(
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Color(0xFFF20D625)),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                          ))),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => PhoneTwo()),
-                        );
-                      },
-                      child: Container(
-                        child: Text(
-                          "CODIGO DE AREA NACIONAL",
-                          style: TextStyle(color: Colors.black),
-                        ),
-                      )),
-                  ElevatedButton(
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Color(0xFFF20D625)),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                          ))),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => PhoneThree()),
-                        );
-                      },
-                      child: Container(
-                        child: Text(
-                          "Codigo Area Nacional",
-                          style: TextStyle(color: Colors.black),
-                        ),
-                      )),
-                  ElevatedButton(
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Color(0xFFF20D625)),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                          ))),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => PhoneFour()),
-                        );
-                      },
-                      child: Container(
-                        child: Text(
-                          "Empresa Celular",
-                          style: TextStyle(color: Colors.black),
-                        ),
-                      )),
+                  Botton(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PhoneOne()),
+                    );
+                  }, "CODIGO INTERNACIONAL"),
+                  Botton(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PhoneTwo()),
+                    );
+                  }, "CODIGO NACIONAL"),
+                  Botton(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PhoneThree()),
+                    );
+                  }, "CODIGO NACIONAL PROFECIONAL"),
+                  Botton(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PhoneFour()),
+                    );
+                  }, "EMPRESA DE CELULAR"),
                 ],
               ),
             )
@@ -154,4 +100,25 @@ class PhoneFour extends StatelessWidget {
       javascriptMode: JavascriptMode.unrestricted,
     );
   }
+}
+
+Botton(page, name) {
+  return SizedBox(
+    width: 250,
+    height: 50,
+    child: ElevatedButton(
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Color(0xFFF20D625)),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50.0),
+            ))),
+        onPressed: page,
+        child: Container(
+          child: Text(
+            name,
+            style: TextStyle(color: Colors.black, fontSize: 13),
+          ),
+        )),
+  );
 }
