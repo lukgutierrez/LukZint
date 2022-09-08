@@ -21,7 +21,7 @@ https://informes.nosis.com/
 https://www.anses.gob.ar/consulta/constancia-de-cuil // date correct
 http://servicioswww.anses.gob.ar/ooss2/// obra social
 https://servicioswww.anses.gob.ar/censite/index.aspx //negativa de anses
-https/:/www.argentina.gob.ar/aaip/datospersonales/reclama  //base date ansefa-spin
+https://www.argentina.gob.ar/aaip/datospersonales/reclama  //base date ansefa-spin
 https://www.justiciasalta.gov.ar/es/certificado-deudores // ALIMETARIOS MOROSOS
 
 CODE POSTAL

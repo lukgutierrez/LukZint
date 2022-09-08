@@ -51,6 +51,18 @@ class PhoneNumbers extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => PhoneFour()),
                     );
                   }, "EMPRESA DE CELULAR"),
+                  Botton(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PhoneFive()),
+                    );
+                  }, "IMEI VERIFICATION #1"),
+                  Botton(() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PhoneSix()),
+                    );
+                  }, "IMEI VERIFICATION #2"),
                 ],
               ),
             )
@@ -96,6 +108,26 @@ class PhoneFour extends StatelessWidget {
   Widget build(BuildContext context) {
     return WebView(
       initialUrl: "https://www.datacels.com/detectar-empresa-telefono",
+      javascriptMode: JavascriptMode.unrestricted,
+    );
+  }
+}
+
+class PhoneFive extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return WebView(
+      initialUrl: "https://www.enacom.gob.ar/imei",
+      javascriptMode: JavascriptMode.unrestricted,
+    );
+  }
+}
+
+class PhoneSix extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return WebView(
+      initialUrl: "https://imeipro.info/",
       javascriptMode: JavascriptMode.unrestricted,
     );
   }
