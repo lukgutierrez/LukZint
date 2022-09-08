@@ -57,12 +57,6 @@ class PeopleInvestigation extends StatelessWidget {
                   Botton(() {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PeopleFive()),
-                    );
-                  }, "OBRA SOCIAL"),
-                  Botton(() {
-                    Navigator.push(
-                      context,
                       MaterialPageRoute(builder: (context) => PeopleSix()),
                     );
                   }, "DATE BASE GENERAL"),
@@ -98,7 +92,7 @@ class PeopleThree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WebView(
-      initialUrl: "https://servicioswww.anses.gob.ar/censite/index.aspx",
+      initialUrl: "",
       javascriptMode: JavascriptMode.unrestricted,
     );
   }
@@ -118,7 +112,7 @@ class PeopleFive extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WebView(
-      initialUrl: "http://servicioswww.anses.gob.ar/ooss2/",
+      initialUrl: "https://www.sssalud.gob.ar",
       javascriptMode: JavascriptMode.unrestricted,
     );
   }

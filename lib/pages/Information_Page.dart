@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:people_information/models/cars_investigation.dart';
 import 'package:people_information/models/correo_investigation.dart';
+import 'package:people_information/models/google_hacking.dart';
 import 'package:people_information/models/image_inverse.dart';
 import 'package:people_information/models/people_investigation.dart';
 import 'package:people_information/models/phone_number.dart';
+import 'package:people_information/models/target_credit.dart';
 import 'package:people_information/models/ubication_people.dart';
 
 /////////////PAGEWELCOMEPRINCIPAL//////////////////////////////
@@ -92,6 +94,23 @@ class PageInformation extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) => CarsInvestigation()),
+                        );
+                      }),
+                  Divider(height: 20),
+                  Bottom(
+                      AssetImage("assets/image/credit.png"),
+                      () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => CreditCard()),
+                        );
+                      },
+                      AssetImage("assets/image/google.png"),
+                      () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => GoogleHaking()),
                         );
                       }),
                 ],

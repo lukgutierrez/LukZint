@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:people_information/models/phone_number.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class UbicationPeople extends StatelessWidget {
-  const UbicationPeople({Key? key}) : super(key: key);
+class CreditCard extends StatelessWidget {
+  const CreditCard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class UbicationPeople extends StatelessWidget {
                           child: Image(
                               image: AssetImage("assets/image/logo.png"))),
                       Text(
-                        "UBICATION",
+                        "TARJET CREDIT",
                         style:
                             TextStyle(fontSize: 15, color: Color(0xFFF20D625)),
                       ),
@@ -35,9 +36,9 @@ class UbicationPeople extends StatelessWidget {
                   Botton(() {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => UbicationOne()),
+                      MaterialPageRoute(builder: (context) => CreditOne()),
                     );
-                  }, "CODIGO POSTAL"),
+                  }, "VALIDAR TARJETA"),
                 ],
               ),
             )
@@ -46,11 +47,12 @@ class UbicationPeople extends StatelessWidget {
   }
 }
 
-class UbicationOne extends StatelessWidget {
+class CreditOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WebView(
-      initialUrl: "https://www.correoargentino.com.ar/formularios/cpa",
+      initialUrl:
+          "https://www.vccgenerator.org/es/validador-de-tarjeta-de-credito/",
       javascriptMode: JavascriptMode.unrestricted,
     );
   }
