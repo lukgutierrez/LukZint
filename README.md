@@ -1,4 +1,4 @@
-# people_information
+# LUKZINT
 
 A new Flutter project.
 
